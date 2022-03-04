@@ -12,6 +12,8 @@ const addToZero = (arr) => {
 // Runtime complexity - O(n^2)
 // Space complexity - O(n)
 
+
+
 const hasUniqueChars = (str) => {
     for (let i = 0; i < str.length; i++) {
         for (let j = 0; j < str.length; j++) {
@@ -26,31 +28,32 @@ const hasUniqueChars = (str) => {
 // Runtime complexity - O(n^2)
 // Space complexity - O(n)
 
+
+
 const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
 function isPangram (str) {
+    let alpha = [...alphabet]
+    str = str.toLowerCase()
     alphabet.forEach((e) => {
-        console.log(alphabet)
         if (str.includes(e)){
-            alphabet.splice(alphabet.indexOf(e),1)
+            alpha.splice(alpha.indexOf(e),1)
         }
     })
 
-    if (alphabet.length === 0) {
+    if (alpha.length === 0) {
         return true
     } else {
         return false
     }
 }
 
+
+
 // Runtime complexity - O(n)
 // Space complexity - O(n)
 
-console.log(isPangram("The quick brown fox jumps over the lazy dog!"))
-// -> True
 
-console.log(isPangram("I like cats, but not mice"))
-// -> False
 
 const findLongestWord = (arr) => {
     let longest = 0
